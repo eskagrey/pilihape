@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Website Title -->
+    <title>PiliHape - Situs yang bantu kamu buat milih hape sesuai kebutuhan</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Helvetica:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/fontawesome-all.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
+	<link href="../css/magnific-popup.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<!-- Favicon  -->
+    <link rel="icon" href="../images/favicon.png">
+
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <!-- Text Logo - Use this if you don't have a graphic logo -->
+    <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
+  
+    <!-- Image Logo -->
+    <!-- <a class="navbar-brand logo-image" href="index.html"><img src="../images/logo.svg" alt="alternative"></a> -->
+    <button type="button" class="btn btn-outline-secondary" onclick="back()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"></path>
+        </svg> Kembali
+    </button>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-awesome fas fa-bars"></span>
+        <span class="navbar-toggler-awesome fas fa-times"></span>
+    </button>
+    <!-- end of mobile menu toggle button -->
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+              <li class="nav-item" id="store_name">
+                  
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link page-scroll" onclick="logout()">Keluar</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link page-scroll" href="http://localhost/index.html#contact">Hubungi kami</a>
+            </li>
+        </ul>
+        <span class="nav-item social-icons">
+            <span class="fa-stack">
+                <a href="https://web.facebook.com/apryantho.s">
+                    <i class="fas fa-circle fa-stack-2x facebook"></i>
+                    <i class="fab fa-facebook-f fa-stack-1x"></i>
+                </a>
+            </span>
+            <span class="fa-stack">
+                <a href="https://www.instagram.com/apryantho_s/">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x"></i>
+                </a>
+            </span>
+        </span>
+    </div>
+  </nav> <!-- end of navbar -->
+  <!-- end of navigation -->
+  
+
+        <!-- Services -->
+        <div id="services" class="cards-1">
+            <div class="container">
+                <h2>Edit</h2>
+                <img class="card-image" id="pic-product">
+                
+                <!-- merk-type -->
+                <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Merk dan tipe
+                    <!-- <label for="merk-type" style="text-align: left;" class="label-text">Merk dan Tipe</label> -->
+                    <input type="text" required class="form-control" id="merk-type" placeholder="Merk, tipe dan informasi varian">
+                </div>
+                <!-- ukuran layar  -->
+                <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Ukuran layar
+                    <div class="input-group">
+                        <input type="number" required readonly class="form-control" id="layar-ukuran" placeholder="berapa inci">
+                        <span class="input-group-text">Inci</span>
+                    </div>
+                </div>
+
+                <!-- resolusi layar -->
+                <form role="form">
+                    <div class="form-group">
+                        <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Resolusi Layar
+                    <input type="text" required readonly placeholder="Pilih" id="layar-resolusi" class="form-control" list="layar_resolusi_list"/>
+                    </div>
+                    <datalist id="layar_resolusi_list">
+                    <option value="720p">HD</option>
+                    <option value="1080p">Full HD</option>
+                    <option value="1440p">2K</option>
+                    </datalist>
+                </form>
+
+                <!-- model layar -->
+                <form role="form">
+                    <div class="form-group">
+                        <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Model Layar
+                    <input type="text" required readonly placeholder="Pilih" id="layar-model" class="form-control" list="layar_model_list"/>
+                    </div>
+                    <datalist id="layar_model_list">
+                    <option value="konvensional"></option>
+                    <option value="full view"></option>
+                    <option value="notch"></option>
+                    <option value="punch hole"></option>
+                    <option value="all screen"></option>
+                    </datalist>
+                </form>
+
+                <!-- kapasitas baterai -->
+                <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Kapasitas Baterai
+                    <div class="input-group">
+                        <input type="number" required readonly class="form-control" id="kapasitas-baterai" placeholder="angka mAh">
+                        <span class="input-group-text">mAh</span>
+                    </div>
+                </div>
+
+                <!-- jumlah kamera -->
+                <form role="form">
+                    <div class="form-group">
+                        <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Jumlah Kamera
+                    <input type="text" required readonly placeholder="Pilih" id="kamera-jumlah" class="form-control" list="kamera_jumlah_list"/>
+                    </div>
+                    <datalist id="kamera_jumlah_list">
+                    <option value="single"></option>
+                    <option value="dual"></option>
+                    <option value="triple"></option>
+                    <option value="quad"></option>
+                    </datalist>
+                </form>
+
+                <!-- res kamera depan -->
+                <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Resolusi Kamera Depan
+                    <div class="input-group">
+                        <input type="number" required readonly class="form-control" id="kamera-res-depan" placeholder="angka megapixels">
+                        <span class="input-group-text">MP</span>
+                    </div>
+                </div>
+                <!-- res kamera belakang -->
+                <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Resolusi Kamera Belakang
+                    <div class="input-group">
+                        <input type="number" required readonly class="form-control" id="kamera-res-belakang" placeholder="angka megapixels">
+                        <span class="input-group-text">MP</span>
+                    </div>
+                </div>
+
+                <!-- prosesor -->
+                <form role="form">
+                    <div class="form-group">
+                        <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Prosesor
+                    <input type="text" required readonly id="prosesor" class="form-control" list="prosesor_list"/>
+                    </div>
+                    <datalist id="prosesor_list"></datalist>
+                </form>
+
+                <!-- kapasitas penyimpanan -->
+                <form role="form">
+                    <div class="form-group">
+                        <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Kapasitas Penyimpanan
+                    <input type="text" required placeholder="Pilih" id="kapasitas-penyimpanan" class="form-control" list="kapasitas_penyimpanan_list"/>
+                    <span class="input-group-text">GB</span>
+                    </div>
+                    <datalist id="kapasitas_penyimpanan_list">
+                    <option value="16"></option>
+                    <option value="32"></option>
+                    <option value="64"></option>
+                    <option value="128"></option>
+                    </datalist>
+                </form>
+
+                <!-- kapasitas ram -->
+                <form role="form">
+                    <div class="form-group">
+                        <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Kapasitas RAM
+                    <input type="text" required placeholder="Pilih" id="kapasitas-ram" class="form-control" list="kapasitas_ram_list"/>
+                    <span class="input-group-text">GB</span>
+                    </div>
+                    <datalist id="kapasitas_ram_list">
+                    <option value="2"></option>
+                    <option value="3"></option>
+                    <option value="4"></option>
+                    <option value="6"></option>
+                    </datalist>
+                </form>
+
+                <!-- umur -->
+                <form role="form">
+                    <div class="form-group">
+                        <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Umur penggunaan
+                    <input type="text" required placeholder="Pilih" id="umur" class="form-control" list="umur_list"/>
+                    </div>
+                    <datalist id="umur_list">
+                      <option><12 bulan</option>
+                      <option>12-24 bulan</option>
+                      <option>>24 bulan</option>
+                    </datalist>
+                </div>
+
+                <!-- software -->
+                <form role="form">
+                    <div class="form-group">
+                        <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Software
+                    <input type="text" required placeholder="Pilih" id="software" class="form-control" list="software_list"/>
+                    </div>
+                    <datalist id="software_list">
+                      <option >android 6</option>
+                      <option >android 7</option>
+                      <option >android 8</option>
+                      <option >android 9</option>
+                      <option >android 10</option>
+                    </select>
+                </div>
+
+                <!-- kondisi fisik -->
+                <form role="form">
+                    <div class="form-group">
+                        <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Kondisi fisik
+                    <input type="text" required placeholder="Pilih" id="kondisi-fisik" class="form-control" list="kondisi_list"/>
+                    </div>
+                    <datalist id="kondisi_list">
+                      <option>mulus</option>
+                      <option>lecet ringan</option>
+                      <option>lecet parah</option>
+                    </select>
+                </div>
+
+                <!-- kelengkapan -->
+                <form role="form">
+                    <div class="form-group">
+                        <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Kelengkapan
+                    <input type="text" required placeholder="Pilih" id="kelengkapan" class="form-control" list="kelengkapan_list"/>
+                    </div>
+                    <datalist id="kelengkapan_list">
+                      <option>fullset</option>
+                      <option>unit dan charger</option>
+                      <option>hanya unit</option>
+                    </select>
+                </div>
+
+                <!-- harga -->
+                <div class="label-text" style="margin-bottom: 10px; font-weight: bold;">Harga
+                    <div class="input-group">
+                        <input type="number" required class="form-control" id="harga" placeholder="input harga">
+                        <span class="input-group-text">Rupiah</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" id="save" onclick="postData()" class="btn btn-primary btn-lg btn-block">Simpan</button>
+                </div>
+
+
+            </div>
+        </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-col">
+                        <h4>PiliHape</h4>
+                        <p>Kami berusaha memberikan rekomendasi ponsel bekas terbaik berdasarkan pilihan kamu.</p>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col middle">
+                        <h4>Tautan Penting</h4>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Prosesor kami nilai berdararkan <a class="turquoise" href="https://www.techcenturion.com/smartphone-processors-ranking">Centurion Mark</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Baca <a class="turquoise" href="terms-conditions.html">Aturan Penggunaan</a>, <a class="turquoise" href="privacy-policy.html">Kebijakan Privasi</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col last">
+                        <h4>Media Sosial</h4>
+                        <span class="fa-stack">
+                            <a href="https://web.facebook.com/apryantho.s">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://twitter.com/apryantho_s">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://www.instagram.com/apryantho_s/">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://www.linkedin.com/in/saifulkurniawan">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div> 
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+   
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Desain template dari: <a href="https://inovatik.com">Inovatik</a> - All rights reserved</p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+    
+</body>    	
+    <!-- Scripts -->
+  <script src="../js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+  <script src="../js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+  <script src="../js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+  <script src="../js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+  <script src="../js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+  <script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+  <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+  <script src="../js/scripts.js"></script> <!-- Custom scripts -->
+
+<script>
+
+window.onload = function(){
+    fetch("http://localhost/pilihape/api/adm/ponsel")
+    .then(function(response){
+        if(response.status !==200){
+            alert('Ups, '+response.statusText);
+            window.location.replace("http://localhost/pilihape/admin/login.php");
+        }
+    })
+}
+
+function back(){
+    window.location.replace('http://localhost/pilihape/admin/dashboard.php');
+}
+
+
+function getUrlParam(id){
+    let param = window.location.search.substring(4);
+    return param;
+}
+
+var param = getUrlParam('id');
+fetch('http://localhost/pilihape/api/ponsel/'+param)
+.then(function(response){
+    if(response.status !== 200){
+        console.log('Ups, ada masalah: '+response.statusText);
+    }
+    return response.json()
+})
+.then(result => {
+    sessionStorage.setItem('img-url', result.image_url);
+    let img = document.getElementById('pic-product');
+    img.setAttribute('src', result.image_url);
+    img.setAttribute('onerror', 'this.src="../images/no-img.png"');
+    img.setAttribute('style', 'border-radius:0.5em; width:100%;');
+    document.getElementById('merk-type').value = result.merk_type;
+    document.getElementById('layar-ukuran').value = result.layar_ukuran;
+    document.getElementById('layar-resolusi').value = result.layar_resolusi;
+    document.getElementById('layar-model').value = result.layar_model;
+    document.getElementById('kapasitas-baterai').value = result.kapasitas_baterai;
+    document.getElementById('kamera-jumlah').value = result.kamera_jumlah;
+    document.getElementById('kamera-res-depan').value = result.kamera_res_depan;
+    document.getElementById('kamera-res-belakang').value = result.kamera_res_belakang;
+    document.getElementById('prosesor').value = result.prosesor;
+    document.getElementById('kapasitas-penyimpanan').value = result.kapasitas_penyimpanan;
+    document.getElementById('kapasitas-ram').value = result.kapasitas_ram;
+    document.getElementById('umur').value = result.umur;
+    document.getElementById('software').value = result.software;
+    document.getElementById('kondisi-fisik').value = result.kondisi_fisik;
+    document.getElementById('kelengkapan').value = result.kelengkapan;
+    document.getElementById('harga').value = result.harga;
+})
+.catch(function(err){
+    console.log(err);
+});
+
+function postData() {
+    var merk_type               = document.getElementById('merk-type').value;
+    var layar_ukuran            = document.getElementById('layar-ukuran').value;
+    var layar_resolusi          = document.getElementById('layar-resolusi').value;
+    var layar_model             = document.getElementById('layar-model').value;
+    var kapasitas_baterai       = document.getElementById('kapasitas-baterai').value;
+    var kamera_jumlah           = document.getElementById('kamera-jumlah').value;
+    var kamera_res_depan        = document.getElementById('kamera-res-depan').value;
+    var kamera_res_belakang     = document.getElementById('kamera-res-belakang').value;
+    var prosesor                = document.getElementById('prosesor').value;
+    var ranking_prosesor        = document.getElementById('prosesor').value;
+    var kapasitas_penyimpanan   = document.getElementById('kapasitas-penyimpanan').value;
+    var kapasitas_ram           = document.getElementById('kapasitas-ram').value;
+    var umur                    = document.getElementById('umur').value;
+    var software                = document.getElementById('software').value;
+    var kondisi_fisik           = document.getElementById('kondisi-fisik').value;
+    var kelengkapan             = document.getElementById('kelengkapan').value;
+    var harga                   = document.getElementById('harga').value;
+    var store_id                = localStorage.getItem('store_id');
+    var image_url               = sessionStorage.getItem('img-url');
+
+    const arrPost = JSON.stringify({
+        "id":param,
+		"merk_type": merk_type,
+        "layar_ukuran": layar_ukuran,
+        "layar_resolusi": layar_resolusi,
+        "layar_model": layar_model,
+        "kapasitas_baterai": kapasitas_baterai,
+        "kamera_jumlah": kamera_jumlah,
+        "kamera_res_depan": kamera_res_depan,
+        "kamera_res_belakang": kamera_res_belakang,
+        "prosesor": prosesor,
+        "ranking_prosesor": "",
+        "kapasitas_penyimpanan": kapasitas_penyimpanan,
+        "kapasitas_ram": kapasitas_ram,
+        "umur": umur,
+        "software": software,
+        "kondisi_fisik": kondisi_fisik,
+        "kelengkapan": kelengkapan,
+        "harga": harga,
+        "store_id": store_id,
+        "image_url":image_url
+    });
+    // console.log(arrPost);
+
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://localhost/pilihape/api/adm/ponsel/"+param,
+        "method": "PUT",
+        "headers": {
+            "content-type": "application/json",
+            "cache-control": "no-cache"
+        },
+        "processData": false,
+        "data": arrPost,
+        // "data": "{\r\n    \"merk_type\":\"Oppo A5 2020 3/64\",\r\n    \"layar_ukuran\":\"6.5\",\r\n    \"layar_resolusi\":\"720p\",\r\n    \"layar_model\":\"notch\",\r\n    \"kapasitas_baterai\":\"5000\",\r\n    \"kamera_jumlah\":\"quad\",\r\n    \"kamera_res_depan\":\"5\",\r\n    \"kamera_res_belakang\":\"12\",\r\n    \"prosesor\":\"Snapdragon 665\",\r\n    \"ranking_prosesor\":\"\",\r\n    \"kapasitas_penyimpanan\":\"64\",\r\n    \"kapasitas_ram\":\"3\",\r\n    \"umur\":\"<12 bulan\",\r\n    \"software\":\"android 10\",\r\n    \"kondisi_fisik\":\"mulus\",\r\n    \"kelengkapan\":\"fullset\",\r\n    \"harga\":\"1850000\",\r\n    \"store_id\":\"1\",\r\n    \"image_url\":\"http://localhost/pilihape/api/products/20201005200130_1.jpg\"\r\n}"
+
+        error: function(jqXHR, textStatus, errorThrown) {
+            alert(jqXHR.status);
+            alert(textStatus);
+            alert(errorThrown);
+        }
+    }
+
+    $.ajax(settings).done(function (response) {
+        var rsp = JSON.parse(response);
+        alert(rsp.msg);
+        back();
+        
+    });
+}
+
+</script>
+
+<!-- </body> -->
+</html>
